@@ -26,7 +26,10 @@ import com.gargoylesoftware.htmlunit.javascript.configuration.JsxConstructor;
  * @author Ahmed Ashour
  */
 @JsxClass(FF)
-public class MouseScrollEvent extends MouseEvent {
+public class MouseScrollEvent extends UIEvent {
+	
+	/** The scroll event type, triggered by {@code onscroll} event handlers. */
+    public static final String TYPE_SCROLL = "scroll";
 
     /** Constant for {@code HORIZONTAL_AXIS}. */
     @JsxConstant
@@ -41,5 +44,7 @@ public class MouseScrollEvent extends MouseEvent {
      */
     @JsxConstructor
     public MouseScrollEvent() {
+    	super();
+    	setType(TYPE_SCROLL);
     }
 }
